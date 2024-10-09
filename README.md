@@ -1,11 +1,10 @@
-
-
+---
 
 # CustomThread
 
 ## Introduction
 
-`CustomThread` is a custom threading class in Python that extends the functionality of the standard `threading.Thread` class. It allows for additional features such as returning the result of the target function and raising exceptions in the thread.
+`CustomThread` is a custom threading class in Python that extends the functionality of the standard `threading.Thread` class. It provides additional features such as returning the result of the target function, raising exceptions in the thread, and more control over the thread lifecycle.
 
 ## Table of Contents
 
@@ -47,44 +46,47 @@ print(f"Result from thread: {result}")
 
 ## Features
 
-- **Return Value**: The thread can return a value from the target function.
-- **Exception Handling**: Allows raising exceptions in the thread.
-- **Thread Identification**: Provides a method to get the thread ID.
+- **Return Value**: The thread can return a value from the target function, which can be accessed by calling the `join` method.
+- **Exception Handling**: Allows raising exceptions in the thread using the `raise_exception` method.
+- **Thread Identification**: Provides a method to get the thread ID with `get_id`.
+- **Stop Event**: Uses a threading event to indicate when the thread should stop.
+- **Daemon Thread Support**: Can be set as a daemon thread during initialization.
 
 ## Dependencies
 
 - Python 3.x
-- ctypes module (included in the standard library)
+- `ctypes` module (included in the standard library)
 
 ## Configuration
 
-No specific configuration is required. 
+No specific configuration is required. The class can be directly used by creating instances of `CustomThread`.
 
 ## Documentation
 
 ### Class: `CustomThread`
 
-#### `__init__(self, group=None, target=None, name=None, args=(), kwargs={}, Verbose=None)`
+#### `__init__(self, group=None, target=None, name=None, args=(), kwargs={}, daemon=None, verbose=None)`
 Initializes a new `CustomThread` instance.
 
-- **group**: Thread group.
-- **target**: Target function to call when thread starts.
-- **name**: Thread name.
-- **args**: Arguments to pass to the target function.
-- **kwargs**: Keyword arguments to pass to the target function.
-- **Verbose**: Verbosity level (not used in the current implementation).
+- **group**: Thread group (default is `None`).
+- **target**: Target function to call when the thread starts.
+- **name**: Thread name (default is `None`).
+- **args**: Arguments to pass to the target function (default is an empty tuple).
+- **kwargs**: Keyword arguments to pass to the target function (default is an empty dictionary).
+- **daemon**: If `True`, the thread will run as a daemon (default is `None`).
+- **verbose**: Verbosity level (not used in the current implementation).
 
 #### `run(self)`
-Executes the target function with the given arguments and keyword arguments.
+Executes the target function with the given arguments and keyword arguments, storing the return value.
 
-#### `join(self)`
+#### `join(self, *args, **kwargs)`
 Waits for the thread to finish and returns the result of the target function.
 
 #### `get_id(self)`
 Returns the ID of the respective thread.
 
 #### `raise_exception(self)`
-Raises an exception in the thread.
+Raises a `SystemExit` exception in the thread to stop its execution. If the exception cannot be raised, an error message will be printed.
 
 ## Examples
 
@@ -92,7 +94,7 @@ See the [Usage](#usage) section for a basic example.
 
 ## Troubleshooting
 
-- **Exception Raise Failure**: If raising an exception in the thread fails, an error message will be printed.
+- **Exception Raise Failure**: If raising an exception in the thread fails, an error message will be printed. Make sure the thread is running when trying to raise an exception.
 - **Return Value**: Ensure the target function returns a value if you intend to capture it using the `join` method.
 
 ## Contributors
