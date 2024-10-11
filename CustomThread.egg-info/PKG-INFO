@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: CustomThread
-Version: 0.1.0
+Version: 0.1.1
 Summary: A custom threading class in Python that extends the standard threading.Thread.
 Home-page: https://github.com/LeoGotardo/CustomThread
 Author: Leo Gotardo
@@ -34,12 +34,24 @@ License-File: LICENSE
 
 ## Installation
 
-To use `CustomThread`, simply copy the class definition into your project. Ensure you have Python installed (version 3.x is recommended).
+Para instalar o `CustomThread` via `pip`, execute:
+
+```bash
+pip install CustomThread
+```
+
+Depois, você pode importar e usar a classe `CustomThread` em seu projeto:
+
+```python
+from customThread import CustomThread
+```
+
+Certifique-se de ter o Python 3.x instalado. Para mais detalhes, visite a [página do PyPI](https://pypi.org/project/CustomThread/).
 
 ## Usage
 
 ```python
-from custom_thread import CustomThread
+from customThread import CustomThread
 
 def example_function(param1, param2):
     print(f"Parameters are {param1} and {param2}")

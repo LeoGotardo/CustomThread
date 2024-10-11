@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='CustomThread',
-    version='0.1.0',
+    version='0.1.1',
     description='A custom threading class in Python that extends the standard threading.Thread.',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
