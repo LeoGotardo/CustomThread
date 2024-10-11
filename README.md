@@ -20,7 +20,19 @@
 
 ## Installation
 
-To use `CustomThread`, simply copy the class definition into your project. Ensure you have Python installed (version 3.x is recommended).
+Para instalar o `CustomThread` via `pip`, execute:
+
+```bash
+pip install CustomThread
+```
+
+Depois, você pode importar e usar a classe `CustomThread` em seu projeto:
+
+```python
+from custom_thread import CustomThread
+```
+
+Certifique-se de ter o Python 3.x instalado. Para mais detalhes, visite a [página do PyPI](https://pypi.org/project/CustomThread/).
 
 ## Usage
 
