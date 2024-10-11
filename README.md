@@ -37,7 +37,7 @@ Certifique-se de ter o Python 3.x instalado. Para mais detalhes, visite a [pági
 ## Usage
 
 ```python
-from custom_thread import CustomThread
+from customThread import CustomThread
 
 def example_function(param1, param2):
     print(f"Parameters are {param1} and {param2}")
