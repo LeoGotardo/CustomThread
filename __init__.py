@@ -1,3 +1,3 @@
-from .CustomThread import CustomThread
+from .CustomThread import customThread
 
-__all__ = ['CustomThread']
+__all__ = ['customThread']
